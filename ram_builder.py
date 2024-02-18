@@ -1,15 +1,15 @@
 # Parameters
 file_name = "ram.json"
 blueprint_name = "ram"
-description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 start = 0 # Address from which to start
 end = 65535 # Address to stop at ; Both are included ; My 16-bit RAM can only handle up to 65536 different addresses
+description = "The constant combinators needed for addressing by the 16-bit SIMD RAM ranging from address {0} to address {1} included.".format(start, end)
 
 
 
 # Additional parameters ; Modifying them is unneeded
 direction = 2
-version = "281479278493696"
+version = 281479278493696
 
 
 
@@ -39,6 +39,6 @@ for content in range(start, end + 1):
     pos_y += 1
 
 # Writing tail of file
-file.write("\t\t],\n\t\t\"item\": \"blueprint\",\n\t\t\"label\": \"" + blueprint_name + "\",\n\t\t\"version\": " + version + "\n\t}\n}")
+file.write("\t\t],\n\t\t\"item\": \"blueprint\",\n\t\t\"label\": \"" + blueprint_name + "\",\n\t\t\"version\": " + str(version) + "\n\t}\n}")
 
 file.close()
